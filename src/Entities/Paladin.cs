@@ -9,18 +9,19 @@ namespace RPG_Dio.src.Entities
 {
     public class Paladin : Hero
     {
-        public Paladin(string name, int level, string characterType, int health, int mana, int cap)
+        public Paladin(string name, int exp, string characterType)
         {
             this.Name = name;
-            this.Level = level;
+            LevelAtual();
+            AlterarXP(exp);
             this.CharacterType = characterType;
-            this.Health = health;
-            this.Mana = mana;
-            this.Cap = cap;
+            Health(LifePaladin);
+            Mana(ManaPaladin);
+            Cap(CapPaladin);
 
-            //+10 de vida por level upado
-            //+15 de mana por level upado
-            //+20 de capacidade por level upado
+            //+10 de vida por level upado |lvl 1 = 105|
+            //+15 de mana por level upado |lvl 1 = 15|
+            //+20 de capacidade por level upado |lvl 1 = 310|
 
         }
 
@@ -38,6 +39,13 @@ namespace RPG_Dio.src.Entities
             {
                 return this.Name + " Atacou com ";
             }
+        }
+
+        public override string ToString()
+        {
+            return this.Name + " " + "Level:" + this.NivelAtual + " " + "xp total:" + this.ExpAtual + " " + "Vocação:" + this.CharacterType +
+                 " " + "Total de Vida:" + this.LifePaladin + " " + "Total de Mana:" + this.ManaPaladin + " " +
+                 "Peso Máximo:" + this.CapPaladin;
         }
     }
 }

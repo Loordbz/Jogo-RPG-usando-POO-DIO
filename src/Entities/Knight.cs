@@ -9,20 +9,22 @@ namespace RPG_Dio.src.Entities
 {
     public class Knight : Hero
     {
-        public Knight(string name, int level, string characterType, int health, int mana, int cap)
+        public Knight(string name, int exp, string characterType)
         {
             this.Name = name;
-            this.Level = level;
+            LevelAtual();
+            AlterarXP(exp);
             this.CharacterType = characterType;
-            this.Health = health;
-            this.Mana = mana;
-            this.Cap = cap;
+            Health(LifeKnight);
+            Mana(ManaKnight);
+            Cap(CapKnight);
 
-            //+15 de vida por level upado
-            //+5 de mana por level upado
-            //+25 de capacidade por level upado
+            //+15 de vida por level upado |lvl1 = 65|
+            //+5 de mana por level upado |lvl1 = 5|
+            //+25 de capacidade por level upado |lvl1 = 270|
 
         }
+        
         public override string Attack()
         {
             return this.Name + " atacou com a espada o ";
@@ -37,6 +39,12 @@ namespace RPG_Dio.src.Entities
             {
                 return this.Name + " Atacou com ";
             }
+        }
+        public override string ToString()
+        {
+            return this.Name + " " + "Level:" + this.NivelAtual + " " + "xp total:" + this.ExpAtual + " " + "Vocação:" + this.CharacterType +
+                 " " + "Total de Vida:" + this.LifeKnight + " " + "Total de Mana:" + this.ManaKnight + " " +
+                 "Peso Máximo:" + this.CapKnight;
         }
     }
 }
