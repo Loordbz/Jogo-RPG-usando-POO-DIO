@@ -24,6 +24,7 @@ namespace RPG_Dio.src.Entities
             //+25 de capacidade por level upado |lvl1 = 270|
 
         }
+       
         
         public override string Attack()
         {
@@ -42,7 +43,7 @@ namespace RPG_Dio.src.Entities
         }
         public override string ToString()
         {
-            return this.Name + " " + "Level:" + this.NivelAtual + " " + "xp total:" + this.ExpAtual + " " + "Vocação:" + this.CharacterType +
+            return this.Name + " " + "Level:" + this.NivelAtual + " " + "xp total:" + this.ExpAtual + " " + "xp próximo level:" + this.XpAtualLvl() + " " + "Vocação:" + this.CharacterType +
                  " " + "Total de Vida:" + this.LifeKnight + " " + "Total de Mana:" + this.ManaKnight + " " +
                  "Peso Máximo:" + this.CapKnight;
         }
